@@ -12,4 +12,16 @@ LIMIT 5;
 SELECT p.category, SUM(oi.quantity * oi.unit_price) AS revenue
 FROM order_items oi JOIN products p on oi.product_id = p.id
 GROUP BY p.category
-ORDER BY revenue DESC
+ORDER BY revenue DESC;
+
+--Task 3:
+SELECT e.first_name, e.last_name, d.name AS department_name, e.salary, 
+    (SELECT AVG(salary) 
+    FROM employees 
+    WHERE department_id = e.department_id) AS department_average
+FROM employees e JOIN departments d on e.department_id = d.id
+WHERE e.salary > 
+    (SELECT AVG(salary) 
+    FROM employees 
+    WHERE department_id = e.department_id)
+ORDER BY d.name, e.salary DESC;
