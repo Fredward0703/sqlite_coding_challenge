@@ -25,3 +25,11 @@ WHERE e.salary >
     FROM employees 
     WHERE department_id = e.department_id)
 ORDER BY d.name, e.salary DESC;
+
+--Task 4:
+SELECT city, COUNT(*) as gold_customers
+FROM customers
+WHERE loyalty_level = 'Gold'
+GROUP BY city
+ORDER BY gold_customers DESC, city;
+
