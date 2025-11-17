@@ -8,3 +8,4 @@ TASK 3:
 - Allows us to see if there are any outliers, ex: Alice making 20k more than the average in their department
 TASK 4:
 - As far as gold customers, only Tampa has gold customers
+- Checking the other loyalty status, there isn't many in other cities compared to Tampa
